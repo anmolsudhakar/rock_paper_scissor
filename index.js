@@ -8,13 +8,16 @@ function getComputerChoice() {
 // Function to determine the winner
 function determineWinner(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
-      return 'Draw!';
+    document.getElementById('resultshow').innerText = 'Draw!';
+    return 'Draw!';
   } else if ((playerChoice === 'rock' && computerChoice === 'scissor') ||
-             (playerChoice === 'paper' && computerChoice === 'rock') ||
-             (playerChoice === 'scissor' && computerChoice === 'paper')) {
-      return 'You win!';
+    (playerChoice === 'paper' && computerChoice === 'rock') ||
+    (playerChoice === 'scissor' && computerChoice === 'paper')) {
+    document.getElementById('resultshow').innerText = 'You win!';
+    return 'You win!';
   } else {
-      return 'Computer wins!';
+    document.getElementById('resultshow').innerText = 'Computer wins!';
+    return 'Computer wins!';
   }
 }
 
@@ -25,12 +28,13 @@ function updateCounts(result) {
   const resultCount = document.getElementById('count-2');
 
   if (result === 'You win!') {
-      youCount.textContent = 'You: ' + (parseInt(youCount.textContent.split(' ')[1]) + 1);
+    youCount.textContent = 'You: ' + (parseInt(youCount.textContent.split(' ')[1]) + 1);
   } else if (result === 'Computer wins!') {
-      computerCount.textContent = 'Computer: ' + (parseInt(computerCount.textContent.split(' ')[1]) + 1);
+    computerCount.textContent = 'Computer: ' + (parseInt(computerCount.textContent.split(' ')[1]) + 1);
   }
-  else{resultCount.textContent = 'Draw: ' + (parseInt(resultCount.textContent.split(' ')[1]) + 1);
-}
+  else {
+    resultCount.textContent = 'Draw: ' + (parseInt(resultCount.textContent.split(' ')[1]) + 1);
+  }
 }
 
 // Function to play the game
@@ -41,15 +45,17 @@ function playGame(playerChoice) {
 }
 
 // Add click event listeners to buttons
-document.getElementById('btn-1').addEventListener('click', function() {
+document.getElementById('btn-1').addEventListener('click', function () {
   playGame('rock');
 });
 
-document.getElementById('btn-2').addEventListener('click', function() {
+document.getElementById('btn-2').addEventListener('click', function () {
   playGame('paper');
 });
 
-document.getElementById('btn-3').addEventListener('click', function() {
+document.getElementById('btn-3').addEventListener('click', function () {
   playGame('scissor');
 });
+
+
 

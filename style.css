@@ -44,3 +44,8 @@ body{
     color: black;
     transition: .4s linear;
 }
+
+#resultshow{
+    color: tomato;
+    transition: .5s ease-in-out infinite;
+}
